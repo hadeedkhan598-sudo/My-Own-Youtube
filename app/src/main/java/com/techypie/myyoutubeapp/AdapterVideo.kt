@@ -32,20 +32,20 @@ class AdapterVideo(context: Context, videoList: MutableList<Video>) : RecyclerVi
 
     override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
 
-        var position = holder.bindingAdapterPosition
-        holder.id.text = "#${videoList[position].id}"
-        holder.title.text = videoList[position].title
+        holder.id.text = "#${videoList[p1].id}"
+        holder.title.text = videoList[p1].title
 
-        val videoPath = "https://img.youtube.com/vi/" + videoList[position].videoid + "/0.jpg"
+        val videoPath = "https://img.youtube.com/vi/" + videoList[p1].videoid + "/0.jpg"
         Glide.with(context).load(videoPath).placeholder(R.drawable.bg_placeholder).centerCrop().error(R.drawable.bg_placeholder).into(holder.videoUrl)
 
         holder.showDeleteDialog.setOnClickListener {
+            var position = holder.bindingAdapterPosition
          showDeleteDialog(position)
         }
 
         holder.videoUrl.setOnClickListener {
             context.startActivity(Intent(context, PlayActivity::class.java)
-                .putExtra("Video", videoList[position]))
+                .putExtra("Video", videoList[p1]))
         }
 
     }
