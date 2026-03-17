@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#08DFE5E9"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.FragmentHome">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Add Video"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:textColor="#fff"
+        android:textSize="33dp"
+        android:textFontWeight="600"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/bg_header"
+        android:textStyle="bold"
+        android:id="@+id/header"
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="8dp"
+        android:background="#fff"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Video Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="8dp"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="40dp"
+        android:textColor="#000"
+        android:background="@drawable/bg_input"
+        android:id="@+id/videoTitleET"
+        />
+
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/videoTitleET"
+        android:hint="Paste Youtube Video Link"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="8dp"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:background="@drawable/bg_input"
+        android:id="@+id/videoLinkET"
+        />
+
+
+    <Spinner
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/videoLinkET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:entries="@array/category"
+        android:background="@drawable/bg_input"
+        android:id="@+id/categorySP"
+        />
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/categorySP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:text="ADD"
+        android:textColor="#fff"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:id="@+id/addButton"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        android:id="@+id/demoText"
+        />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="150dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do You Really Want to Delete This Video ?"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:textColor="#000"
+        android:gravity="center"
+        android:id="@+id/textLebel"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/textLebel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:text="Delete"
+        android:id="@+id/deleteButton"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textColor="#fff"
+        android:background="@drawable/bg_button"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/textLebel"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+        android:layout_marginEnd="20dp"
+        android:text="Cancel"
+        android:id="@+id/cancelDialog"
+        android:gravity="center"
+        android:background="@drawable/bg_canceldialog"
+        android:textSize="26sp"
+        android:textColor="#000"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

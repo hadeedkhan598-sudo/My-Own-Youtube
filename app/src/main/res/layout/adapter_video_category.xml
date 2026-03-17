@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="0dp"
+        app:cardElevation="4dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_margin="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="#1"
+                android:paddingHorizontal="10dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textFontWeight="800"
+                android:id="@+id/videoIdTV"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="350dp"
+                android:minHeight="40dp"
+                app:layout_constraintEnd_toStartOf="@id/deleteIV"
+                app:layout_constraintTop_toBottomOf="@+id/videoUrl"
+                android:text="Title Here"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textFontWeight="500"
+                android:id="@+id/videoTitleTV"
+                />
+
+
+
+            <ImageView
+              android:src="@drawable/play_button"
+                app:layout_constraintStart_toStartOf="@id/videoUrl"
+                app:layout_constraintEnd_toEndOf="@id/videoUrl"
+                app:layout_constraintTop_toTopOf="@id/videoUrl"
+                app:layout_constraintBottom_toBottomOf="@id/videoUrl"
+                android:elevation="1dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/videoUrl"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:elevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/videoIdTV"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
