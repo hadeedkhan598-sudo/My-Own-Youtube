@@ -15,12 +15,8 @@ import com.techypie.myyoutubeapp.DatabasaHelper
 import com.techypie.myyoutubeapp.Video
 import com.techypie.myyoutubeapp.databinding.FragmentVideoBinding
 
-class FragmentVideo(context: Context) : Fragment() {
+class FragmentVideo() : Fragment() {
 
-    lateinit var fragmentContext : Context
-    init {
-        this.fragmentContext = context
-    }
     lateinit var binding : FragmentVideoBinding
     lateinit var databasaHelper: DatabasaHelper
    lateinit var adapterVideo : AdapterVideo
@@ -32,7 +28,7 @@ class FragmentVideo(context: Context) : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentVideoBinding.inflate(layoutInflater)
-        databasaHelper = DatabasaHelper(fragmentContext)
+        databasaHelper = DatabasaHelper(context)
         videoList = ArrayList()
         filterList = ArrayList()
         searchList = ArrayList()
@@ -89,7 +85,7 @@ class FragmentVideo(context: Context) : Fragment() {
                 }
 
                 binding.recyclerView.adapter = null
-                adapterVideo = AdapterVideo(fragmentContext,searchList)
+                adapterVideo = AdapterVideo(context,searchList)
                 binding.recyclerView.adapter = adapterVideo
 
                 isSearchFound = false
@@ -102,9 +98,9 @@ class FragmentVideo(context: Context) : Fragment() {
         videoList.clear()
         binding.recyclerView.adapter = null
         videoList = databasaHelper.getAllVideo()
-         adapterVideo = AdapterVideo(fragmentContext,videoList)
+         adapterVideo = AdapterVideo(context,videoList)
         binding.recyclerView.adapter = adapterVideo
-        binding.recyclerView.layoutManager = LinearLayoutManager(fragmentContext)
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onResume() {
@@ -144,7 +140,7 @@ class FragmentVideo(context: Context) : Fragment() {
                 }
 
                 binding.recyclerView.adapter = null
-                adapterVideo = AdapterVideo(fragmentContext,filterList)
+                adapterVideo = AdapterVideo(context,filterList)
                 binding.recyclerView.adapter = adapterVideo
 
             }

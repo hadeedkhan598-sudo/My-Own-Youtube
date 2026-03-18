@@ -16,6 +16,7 @@
         android:theme="@style/Theme.MyYoutubeApp">
         <activity
             android:name=".PlayActivity"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

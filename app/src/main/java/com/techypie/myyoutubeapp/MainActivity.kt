@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
     fun setupViewPager() {
         fragementList = ArrayList()
 
-        var homeFragment = FragmentHome(this@MainActivity)
-        var videoFragment = FragmentVideo(this@MainActivity)
+        var homeFragment = FragmentHome()
+        var videoFragment = FragmentVideo()
 
         fragementList.add(homeFragment)
         fragementList.add(videoFragment)

@@ -11,13 +11,8 @@ import com.techypie.myyoutubeapp.DatabasaHelper
 import com.techypie.myyoutubeapp.R
 import com.techypie.myyoutubeapp.databinding.FragmentHomeBinding
 
-class FragmentHome(context: Context) : Fragment() {
+class FragmentHome() : Fragment() {
 
-    var contextscreen: Context
-
-    init {
-        this.contextscreen = context
-    }
 
     lateinit var binding: FragmentHomeBinding
     lateinit var databasaHelper: DatabasaHelper
@@ -28,7 +23,7 @@ class FragmentHome(context: Context) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
-        databasaHelper = DatabasaHelper(contextscreen)
+        databasaHelper = DatabasaHelper(context)
 
 
         binding.addButton.setOnClickListener {

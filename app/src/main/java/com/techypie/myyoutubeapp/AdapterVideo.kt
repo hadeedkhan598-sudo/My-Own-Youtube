@@ -13,9 +13,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class AdapterVideo(context: Context, videoList: MutableList<Video>) : RecyclerView.Adapter<AdapterVideo.ViewHolder>() {
+class AdapterVideo(context: Context?, videoList: MutableList<Video>) : RecyclerView.Adapter<AdapterVideo.ViewHolder>() {
 
-    var context : Context
+    var context : Context?
     var videoList : MutableList<Video>
     lateinit var databasaHelper: DatabasaHelper
 
@@ -36,7 +36,11 @@ class AdapterVideo(context: Context, videoList: MutableList<Video>) : RecyclerVi
         holder.title.text = videoList[p1].title
 
         val videoPath = "https://img.youtube.com/vi/" + videoList[p1].videoid + "/0.jpg"
-        Glide.with(context).load(videoPath).placeholder(R.drawable.bg_placeholder).centerCrop().error(R.drawable.bg_placeholder).into(holder.videoUrl)
+
+        context?.let {
+            Glide.with(it).load(videoPath).placeholder(R.drawable.bg_placeholder).centerCrop()
+                .error(R.drawable.bg_placeholder).into(holder.videoUrl)
+        }
 
         holder.showDeleteDialog.setOnClickListener {
             var position = holder.bindingAdapterPosition
@@ -44,7 +48,7 @@ class AdapterVideo(context: Context, videoList: MutableList<Video>) : RecyclerVi
         }
 
         holder.videoUrl.setOnClickListener {
-            context.startActivity(Intent(context, PlayActivity::class.java)
+            context?.startActivity(Intent(context, PlayActivity::class.java)
                 .putExtra("Video", videoList[p1]))
         }
 

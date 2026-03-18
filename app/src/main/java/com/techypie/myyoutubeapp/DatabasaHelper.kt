@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DatabasaHelper(context : Context) : SQLiteOpenHelper(context,"VIDEO",null,1) {
+class DatabasaHelper(context : Context?) : SQLiteOpenHelper(context,"VIDEO",null,1) {
 
     init {
         writableDatabase.execSQL("CREATE TABLE IF NOT EXISTS VIDEO(ID INTEGER PRIMARY KEY AUTOINCREMENT , TITLE TEXT , VIDEO_ID TEXT , CATEGORY TEXT)")
